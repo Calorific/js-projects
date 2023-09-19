@@ -1,0 +1,230 @@
+:root {
+  --width: 435px;
+  --height: 175px;
+  --sunOffset: 5%;
+  --lightBg: #2b68a2;
+  --darkBg: #171825;
+  --baseTime: 1s;
+}
+
+body {
+  background-color: rgba(199,209,225,255);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+  position: relative;
+  height: var(--height);
+}
+
+/* Container */
+.switch {
+  display: block;
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--lightBg);
+  position: relative;
+  border-radius: calc(var(--height) / 2) calc(var(--height) / 2) calc(var(--height) / 2) calc(var(--height) / 2);
+  overflow: hidden;
+  box-shadow: 0 -5px 8px -4px rgba(25, 46, 62, 1), 0 8px 8px -4px rgba(237, 243, 253, 1);
+  transition: background-color var(--baseTime);
+  cursor: pointer;
+}
+
+.switch span {
+  display: block;
+}
+
+.shadow, .clouds, .clouds svg, .planets, .space, .moon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.shadow {
+  border-radius: calc(var(--height) / 2) calc(var(--height) / 2) calc(var(--height) / 2) calc(var(--height) / 2);
+  box-shadow: 0 calc(var(--height) * 0.1) 14px -5px #1c1d1d inset, 0 -8px 14px -5px #4e5151 inset;
+  z-index: 10;
+}
+
+/* Svg clouds placement */
+.clouds {
+  transition: top calc(var(--baseTime) * 0.85);
+  top: 0;
+}
+
+.clouds svg:first-child {
+  z-index: 5;
+}
+
+.clouds svg:last-child {
+  width: 150%;
+  height: 150%;
+  top: -28.5%;
+}
+
+/* Sun and rings style */
+label .planets {
+  display: flex;
+  align-items: center;
+  transition: margin var(--baseTime);
+  transition-timing-function: cubic-bezier(.51,.5,.25,1.22);
+}
+
+.ring1, .ring2, .ring3 {
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 4;
+  left: calc(var(--sunOffset) + var(--height) * 0.4 + var(--sunOffset));
+}
+
+.ring1 {
+  height: 290%;
+  width: calc(var(--height) * 2.9);
+  background-color: #3876b3;
+  opacity: 0.15;
+}
+
+.ring2 {
+  height: 230%;
+  width: calc(var(--height) * 2.3);
+  background-color: #95c9e8;
+  opacity: 0.2;
+}
+
+.ring3 {
+  height: 165%;
+  width: calc(var(--height) * 1.65);
+  background-color: #b8d8e8;
+  opacity: 0.2;
+}
+
+.sun {
+  position: relative;
+  height: 80%;
+  width: calc(var(--height) * 0.8);
+  background-color: #f3b61a;
+  border-radius: 50%;
+  z-index: 50;
+  margin-left: var(--sunOffset);
+  box-shadow: calc((var(--height) * 0.0229)) calc((var(--height) * 0.0343)) 8px 3px rgba(19, 20, 22, 0.7), -7px calc((var(--height) * -0.0629)) 9px -4px rgba(19, 20, 22, 0.6) inset;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.moon {
+  left: 100%;
+  background-color: #bec4d2;
+  border-radius: 50%;
+  transition: left var(--baseTime);
+  box-shadow: -7px calc((var(--height) * -0.0629)) 9px -4px rgba(19, 20, 22, 0.6) inset;
+  transition-timing-function: cubic-bezier(.51,.5,.25,1.22);
+}
+
+.sun::before, .moon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: 3px 6px 12px -2px white inset;
+}
+
+.moon span {
+  background-color: #8790aa;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 5px 12px -3px rgba(81, 82, 84, 0.8) inset;
+}
+
+/* Stars */
+.space {
+  top: -100%;
+  transition: top var(--baseTime);
+  transition-timing-function: cubic-bezier(.64,1.05,.43,1.13);
+}
+
+.star {
+  position: absolute;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.star span {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--lightBg);
+  border-radius: 50%;
+  transition: background-color var(--baseTime);
+}
+
+.star span:first-child {
+  left: 50%;
+  top: 50%;
+}
+
+.star span:nth-child(2) {
+  top: 50%;
+  right: 50%;
+}
+
+.star span:nth-child(3) {
+  left: 50%;
+  bottom: 50%;
+}
+
+.star span:last-child {
+  right: 50%;
+  bottom: 50%;
+}
+
+/* Styles when checkbox is checked */
+/* Switch background color */
+#day-night-switch:checked + .switch {
+  background-color: var(--darkBg);
+}
+
+/* Move clouds */
+#day-night-switch:checked + label > .clouds {
+  top: 100%;
+}
+
+/* Move planets */
+#day-night-switch:checked + label > .planets {
+  margin-left: 58%;
+}
+
+/* Change rings colors */
+#day-night-switch:checked + label > .planets .ring1 {
+  background-color: #a6b8c3;
+}
+
+#day-night-switch:checked + label > .planets .ring2 {
+  background-color: #7d8898;
+}
+
+#day-night-switch:checked + label > .planets .ring3 {
+  background-color: #b5c4d9;
+}
+
+/* Move stars down */
+#day-night-switch:checked + label > .space {
+  top: 0;
+}
+
+#day-night-switch:checked + label > .space .star span {
+  background-color: var(--darkBg);
+}
+
+/* Show moon */
+#day-night-switch:checked + label > .planets > .sun > .moon {
+  left: 0;
+}

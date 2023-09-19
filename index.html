@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Animated day-night switch" />
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="index.css">
+  <title>Day-Night Switch</title>
+</head>
+<body>
+<div class="main">
+  <div>
+    <input type="checkbox" id="day-night-switch" name="day-night-switch" style="display: none; opacity: 0;">
+    <label class="switch" id="switch" for="day-night-switch">
+      <span class="shadow"></span>
+      <span class="clouds">
+        <svg viewBox="90 40 20 20">
+          <ellipse rx="10" ry="10"  cx="126.8" cy="53.75" stroke="#f1f8fd" fill="#f1f8fd" />
+          <ellipse rx="7"  ry="7"   cx="120.7" cy="57.6"  stroke="#f1f8fd" fill="#f1f8fd" />
+          <ellipse rx="7"  ry="7"   cx="112"   cy="62.3"  stroke="#f1f8fd" fill="#f1f8fd" />
+          <ellipse rx="5"  ry="5"   cx="105.5" cy="62.25" stroke="#f1f8fd" fill="#f1f8fd" />
+          <ellipse rx="6"  ry="7"   cx="98.9"  cy="63"    stroke="#f1f8fd" fill="#f1f8fd" />
+          <ellipse rx="5"  ry="5"   cx="92"    cy="62.5"  stroke="#f1f8fd" fill="#f1f8fd" />
+          <ellipse rx="5"  ry="5"   cx="85"    cy="62.5"  stroke="#f1f8fd" fill="#f1f8fd" />
+        </svg>
+        <svg viewBox="90 40 20 20">
+          <ellipse rx="9"  ry="9.3" cx="125.2" cy="48.2" stroke="#96b7d8" fill="#96b7d8" />
+          <ellipse rx="5"  ry="5"   cx="115"   cy="53.2" stroke="#96b7d8" fill="#96b7d8" />
+          <ellipse rx="7"  ry="6.8" cx="109.5" cy="56.4" stroke="#96b7d8" fill="#96b7d8" />
+          <ellipse rx="10" ry="10"  cx="105"   cy="62.7" stroke="#96b7d8" fill="#96b7d8" />
+          <ellipse rx="5"  ry="5"   cx="98.5"  cy="57.3" stroke="#96b7d8" fill="#96b7d8" />
+          <ellipse rx="5"  ry="5"   cx="89.5"  cy="59.7" stroke="#96b7d8" fill="#96b7d8" />
+          <ellipse rx="4"  ry="4"   cx="82.5"  cy="60.7" stroke="#96b7d8" fill="#96b7d8" />
+        </svg>
+        <svg viewBox="90 40 20 20">
+          <ellipse rx="6.18" ry="6.48" cx="108.8" cy="49.6" stroke="#96b7d8" fill="#96b7d8" />
+        </svg>
+      </span>
+      <span class="planets">
+        <span class="ring1"></span>
+        <span class="ring2"></span>
+        <span class="ring3"></span>
+        <span class="sun">
+          <span class="moon">
+            <span style="top: 15.6%; left: 39.5%; width: 18.2%;  height: 18.2%;"></span>
+            <span style="top: 40%;   left: 17%;   width: 34%;    height: 34%;"></span>
+            <span style="top: 57.3%; left: 62%;   width: 20.55%; height: 20.55%;"></span>
+          </span>
+        </span>
+      </span>
+      <span class="space">
+        <span class="star" style="width: calc(var(--height) * 0.1086);  height: 10.86%;  top: 13.8%;  left: 20.4%;"><span></span><span></span><span></span><span></span></span>
+        <span class="star" style="width: calc(var(--height) * 0.05144); height: 5.144%;  top: 26%;    left: 42.2%;"><span></span><span></span><span></span><span></span></span>
+        <span class="star" style="width: calc(var(--height) * 0.05144); height: 5.144%;  top: 30%;    left: 11.4%;"><span></span><span></span><span></span><span></span></span>
+        <span class="star" style="width: calc(var(--height) * 0.14286); height: 14.286%; top: 26.8%;  left: 52.3%;"><span></span><span></span><span></span><span></span></span>
+        <span class="star" style="width: calc(var(--height) * 0.05715); height: 5.715%;  top: 43%;    left: 21.76%;"><span></span><span></span><span></span><span></span></span>
+        <span class="star" style="width: calc(var(--height) * 0.04);    height: 4%;      top: 49.5%;  left: 38.9%;"><span></span><span></span><span></span><span></span></span>
+        <span class="star" style="width: calc(var(--height) * 0.05144); height: 5.144%;  top: 56.1%;  left: 51.3%;"><span></span><span></span><span></span><span></span></span>
+        <span class="star" style="width: calc(var(--height) * 0.04);    height: 4%;      top: 68.7%;  left: 14.9%;"><span></span><span></span><span></span><span></span></span>
+        <span class="star" style="width: calc(var(--height) * 0.08);    height: 8%;      top: 69.8%;  left: 43.4%;"><span></span><span></span><span></span><span></span></span>
+        <span class="star" style="width: calc(var(--height) * 0.04);    height: 4%;      top: 75.8%;  left: 12.2%;"><span></span><span></span><span></span><span></span></span>
+        <span class="star" style="width: calc(var(--height) * 0.04);    height: 4%;      top: 82.2%;  left: 22.3%;"><span></span><span></span><span></span><span></span></span>
+      </span>
+    </label>
+  </div>
+</div>
+</body>
+</html>
